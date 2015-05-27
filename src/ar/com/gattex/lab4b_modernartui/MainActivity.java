@@ -1,7 +1,6 @@
 package ar.com.gattex.lab4b_modernartui;
 
 import android.app.Activity;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -50,7 +49,7 @@ public class MainActivity extends Activity {
 		switch (item.getItemId()) {
 		case R.id.info:
 			MoreInfoDialog alertDialogBuilder = new  MoreInfoDialog(this);
-			alertDialogBuilder.requestWindowFeature(Window.FEATURE_NO_TITLE); //before     
+			alertDialogBuilder.requestWindowFeature(Window.FEATURE_NO_TITLE);   
 			alertDialogBuilder.show();
 			break;
 		}

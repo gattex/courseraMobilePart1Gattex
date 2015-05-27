@@ -23,10 +23,15 @@ public class SeekBarListener implements OnSeekBarChangeListener {
 		this.viewRightOne = viewRightOne;
 		this.viewRightTwo = viewRightTwo;
 		this.viewRightThree = viewRightThree;
+		this.setBackgroundColorFilter(1);
 	}
 
 	@Override
 	public void onProgressChanged(SeekBar seek, int progress, boolean fromUser) {
+		this.setBackgroundColorFilter(progress);
+	}
+	
+	public void setBackgroundColorFilter(int progress){
 		this.viewLeftOne.getBackground().setColorFilter(
 				modifyBlueColor(progress, context.getResources().getColor(R.color.whiteblue)));
 		this.viewLeftTwo.getBackground().setColorFilter(
