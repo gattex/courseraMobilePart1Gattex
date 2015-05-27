@@ -48,9 +48,9 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.info:
-			MoreInfoDialog alertDialogBuilder = new  MoreInfoDialog(this);
-			alertDialogBuilder.requestWindowFeature(Window.FEATURE_NO_TITLE);   
-			alertDialogBuilder.show();
+			MoreInfoDialog dialog = new  MoreInfoDialog(this);
+			dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);   
+			dialog.show();
 			break;
 		}
 		return super.onOptionsItemSelected(item);
