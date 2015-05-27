@@ -1,6 +1,7 @@
 package ar.com.gattex.lab4b_modernartui;
 
 import android.app.Activity;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,6 +16,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		initActionBar();
 		setContentView(R.layout.activity_main);
 		this.seekBar = (SeekBar) super.findViewById(R.id.seekBar);
 		this.seekBar.setOnSeekBarChangeListener(
@@ -26,6 +28,14 @@ public class MainActivity extends Activity {
 						super.findViewById(R.id.viewRigthThree)
 						)
 				);
+	}
+
+	private void initActionBar() {
+		getActionBar().setHomeButtonEnabled(false);
+		getActionBar().setDisplayHomeAsUpEnabled(false);
+		getActionBar().setDisplayShowHomeEnabled(false);
+		getActionBar().setDisplayUseLogoEnabled(false);
+		getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.color_action_bar));
 	}
 
 	@Override

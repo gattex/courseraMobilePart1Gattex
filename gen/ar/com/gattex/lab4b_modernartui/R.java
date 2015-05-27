@@ -37,14 +37,15 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int homer=0x7f020000;
-        public static final int ic_action_overflow=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int rectangle_one_left=0x7f020003;
-        public static final int rectangle_one_right=0x7f020004;
-        public static final int rectangle_three_right=0x7f020005;
-        public static final int rectangle_two_left=0x7f020006;
-        public static final int rectangle_two_right=0x7f020007;
+        public static final int color_action_bar=0x7f020000;
+        public static final int homer=0x7f020001;
+        public static final int ic_action_overflow=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int rectangle_one_left=0x7f020004;
+        public static final int rectangle_one_right=0x7f020005;
+        public static final int rectangle_three_right=0x7f020006;
+        public static final int rectangle_two_left=0x7f020007;
+        public static final int rectangle_two_right=0x7f020008;
     }
     public static final class id {
         public static final int info=0x7f090009;
@@ -102,9 +103,7 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f070001;
-        public static final int AppThemeModern=0x7f070002;
-        public static final int ButtonMoreInfo=0x7f070005;
-        public static final int CodeFont=0x7f070004;
-        public static final int MyActionBar=0x7f070003;
+        public static final int ButtonMoreInfo=0x7f070003;
+        public static final int CodeFont=0x7f070002;
     }
 }
