@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/CodeFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/more_information_inner" />
+
+    <TextView
+        style="@style/CodeFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/more_information_inner_click" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/moreinformationvisit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/more_information_visit" 
+            style="@style/ButtonMoreInfo" />
+        
+        <View android:layout_width="40dip" android:layout_height="20dip"/>
+        
+        <Button
+            android:id="@+id/moreinformationnotnow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/more_information_not_now" 
+            style="@style/ButtonMoreInfo" />
+    </LinearLayout>
+
+</LinearLayout>

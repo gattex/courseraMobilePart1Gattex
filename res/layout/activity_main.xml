@@ -6,6 +6,8 @@
     android:orientation="vertical"
     tools:context="ar.com.gattex.lab4b_modernartui.MainActivity" >
 
+<!--     <ImageView android:src="@drawable/homer" android:id="@+id/homer" android:layout_width="wrap_content" android:layout_height="wrap_content"/> -->
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -31,8 +33,8 @@
                     android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:tag="@color/green"
-                    android:background="@color/green" />
+                   	android:background="@drawable/rectangle_one_left"
+                    />
 
                 <TableRow
                     android:id="@+id/viewLeftTwo"
@@ -43,7 +45,8 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="2.5dp"
                     android:layout_weight="1"
-                    android:background="@color/whitered" />
+                    android:background="@drawable/rectangle_two_left"
+                     />
             </TableLayout>
         </RelativeLayout>
 
@@ -64,7 +67,8 @@
                     android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="@color/red" />
+                    android:background="@drawable/rectangle_one_right"
+                     />
 
                 <TableRow
                     android:id="@+id/viewRigthTwo"
@@ -75,7 +79,7 @@
                     android:layout_marginTop="2.5dp"
                     android:layout_marginBottom="2.5dp"
                     android:layout_weight="1"
-                    android:background="@color/white" />
+                    android:background="@drawable/rectangle_two_right" />
 
                 <TableRow
                     android:id="@+id/viewRigthThree"
@@ -86,7 +90,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="2.5dp"
                     android:layout_weight="1"
-                    android:background="@color/gray" />
+                    android:background="@drawable/rectangle_three_right" />
             </TableLayout>
         </RelativeLayout>
     </LinearLayout>
@@ -95,6 +99,6 @@
         android:id="@+id/seekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="1000" />
+        android:max="100" />
 
 </LinearLayout>

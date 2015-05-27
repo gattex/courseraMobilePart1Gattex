@@ -1,69 +1,56 @@
 package ar.com.gattex.lab4b_modernartui;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.content.Context;
+import android.graphics.LightingColorFilter;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
-public class SeekBarListener implements OnSeekBarChangeListener{
-	
+public class SeekBarListener implements OnSeekBarChangeListener {
+
 	private View viewLeftOne;
 	private View viewLeftTwo;
 	private View viewRightOne;
 	private View viewRightTwo;
 	private View viewRightThree;
-	
-	private  int KEY_TAG_VIEW_LEFT_ONE = 150;
+	private Context context;
 
-	SeekBarListener(View viewLeftOne, View viewLeftTwo, View viewRightOne, View viewRightTwo, View viewRightThree){
+	SeekBarListener(Context context, View viewLeftOne, View viewLeftTwo,
+			View viewRightOne, View viewRightTwo, View viewRightThree) {
+		this.context = context;
 		this.viewLeftOne = viewLeftOne;
 		this.viewLeftTwo = viewLeftTwo;
 		this.viewRightOne = viewRightOne;
 		this.viewRightTwo = viewRightTwo;
 		this.viewRightThree = viewRightThree;
 	}
-	
-	
+
 	@Override
 	public void onProgressChanged(SeekBar seek, int progress, boolean fromUser) {
-		
-		ObjectTag leftOneTag = (ObjectTag)this.viewLeftOne.getTag(R.id.viewLeftOne);
-		Integer hexaValue = null;
-		if (leftOneTag != null){
-			hexaValue = Integer.parseInt(leftOneTag.tag.substring(1,leftOneTag.tag.length()-1),16);
-			if (leftOneTag.progree < progress){ //increment
-				hexaValue+=progress;
-			}else{
-				hexaValue-=progress;
-			}
-		}else{
-			leftOneTag = new ObjectTag();
-			leftOneTag.progree = progress;
-			leftOneTag.tag = (String)this.viewLeftOne.getTag();
-			hexaValue = Integer.parseInt(leftOneTag.tag.substring(1,leftOneTag.tag.length()-1),16);
-			hexaValue+=progress;
-		}
-		String hexColor = String.format("#%06X", (0xFFFFFF & hexaValue));
-		int colorViewLeftOne = Color.parseColor(hexColor);
-		viewLeftOne.setBackgroundColor(colorViewLeftOne);
-		this.viewLeftOne.setTag(R.id.viewLeftOne,leftOneTag);		
+		this.viewLeftOne.getBackground().setColorFilter(
+				modifyBlueColor(progress, context.getResources().getColor(R.color.whiteblue)));
+		this.viewLeftTwo.getBackground().setColorFilter(
+				modifyBlueColor(progress, context.getResources().getColor(R.color.whitered)));
+		this.viewRightOne.getBackground().setColorFilter(
+				modifyBlueColor(progress, context.getResources().getColor(R.color.red)));
+		this.viewRightTwo.getBackground().setColorFilter(
+				modifyBlueColor(progress, context.getResources().getColor(R.color.white)));
+		this.viewRightThree.getBackground().setColorFilter(
+				modifyBlueColor(progress, context.getResources().getColor(R.color.gray)));
 	}
+
+	public LightingColorFilter modifyBlueColor(int progress, int initColor) {
+		Integer value = (int) progress * 255 / 100;
+		return new LightingColorFilter(initColor, (value >> 0) & 0xFF);
+	}
+
 
 	@Override
 	public void onStartTrackingTouch(SeekBar seek) {
-		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public void onStopTrackingTouch(SeekBar seek) {
-		// TODO Auto-generated method stub
 	}
 
-}
-
-class ObjectTag{
-	
-	String tag;
-	Integer progree;
 }
